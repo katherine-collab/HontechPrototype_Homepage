@@ -288,6 +288,12 @@ ol {
   gap: 10px;
 }
 
+.navbar-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
 .navbar-logo-icon {
   width: 36px;
   height: 36px;

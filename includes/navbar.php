@@ -4,10 +4,7 @@
     <nav class="navbar" id="navbar">
         <div class="navbar-inner">
             <a href="#hero" class="navbar-logo">
-                <div class="navbar-logo-icon">
-                    <i data-lucide="wrench" style="width:18px;height:18px;color:white"></i>
-                </div>
-                <div class="navbar-logo-text">Hon<span>Tech</span></div>
+                <img src="images/hontech-logo.png" alt="Hontech Auto Center Inc." class="navbar-logo-img">
             </a>
 
             <div class="navbar-links" id="navLinks">
