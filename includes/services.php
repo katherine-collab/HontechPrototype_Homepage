@@ -150,9 +150,9 @@
             </div>
 
             <div style="text-align:center; margin-top:36px;" class="reveal">
-                <a href="#estimator" class="btn-primary" style="display:inline-flex;">
-                    <i data-lucide="calculator" style="width:16px;height:16px"></i>
-                    Open Interactive Cost Calculator & Booking
+                <a href="#book" class="btn-primary" style="display:inline-flex;">
+                    <i data-lucide="calendar-check" style="width:16px;height:16px"></i>
+                    Book Your Service
                 </a>
             </div>
         </div>
