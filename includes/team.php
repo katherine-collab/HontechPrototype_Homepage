@@ -13,7 +13,7 @@
 
             <div class="team-layout">
                 <div class="team-image-wrapper reveal-left">
-                    <img src="images/team-photo.png" alt="Hontech Auto Center Team">
+                    <img src="images/team-photo.jpg" alt="The Hontech Auto Center Inc. team at a company anniversary celebration">
                 </div>
 
                 <div class="team-departments">

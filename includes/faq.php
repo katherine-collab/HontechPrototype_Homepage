@@ -61,30 +61,25 @@
 
             <div class="qa-layout">
                 <aside class="qa-cover reveal-left">
-                    <button type="button" class="qa-poster-btn" data-poster="images/faq/faq-00.jpg" aria-label="View the FAQ cover poster larger">
-                        <img src="images/faq/faq-00.jpg" alt="Hontech Auto Center Frequently Asked Questions poster" loading="lazy">
+                    <!-- Swaps to the poster of whichever question below is open; starts on the cover poster. -->
+                    <button type="button" class="qa-poster-btn" id="qaCoverBtn" data-poster="images/faq/faq-00.jpg" aria-label="View this poster larger">
+                        <img src="images/faq/faq-00.jpg" alt="Hontech Auto Center Frequently Asked Questions poster" id="qaCoverImg" loading="lazy">
                     </button>
                 </aside>
 
                 <div class="qa-list">
                     <?php foreach ($faq_items as $i => $it):
                         $img = sprintf('images/faq/faq-%02d.jpg', $it['n']); ?>
-                        <details class="qa-item reveal" data-cat="<?= htmlspecialchars($it['cat']) ?>">
+                        <details class="qa-item reveal" data-cat="<?= htmlspecialchars($it['cat']) ?>" data-poster="<?= $img ?>" data-poster-alt="Poster: <?= htmlspecialchars($it['q']) ?>">
                             <summary>
                                 <span class="qa-num"><?= sprintf('%02d', $i + 1) ?></span>
                                 <span class="qa-q"><?= htmlspecialchars($it['q']) ?></span>
                                 <i data-lucide="chevron-down" class="qa-chevron" style="width:20px;height:20px"></i>
                             </summary>
                             <div class="qa-body">
-                                <div class="qa-text">
-                                    <span class="qa-cat"><?= htmlspecialchars($it['cat']) ?></span>
-                                    <p><?= htmlspecialchars($it['a']) ?></p>
-                                    <a href="#book" class="qa-book">Book Now</a>
-                                </div>
-                                <button type="button" class="qa-poster-btn qa-thumb" data-poster="<?= $img ?>" aria-label="View poster for: <?= htmlspecialchars($it['q']) ?>">
-                                    <img src="<?= $img ?>" alt="" loading="lazy">
-                                    <span class="qa-thumb-hint">View poster</span>
-                                </button>
+                                <span class="qa-cat"><?= htmlspecialchars($it['cat']) ?></span>
+                                <p><?= htmlspecialchars($it['a']) ?></p>
+                                <a href="#book" class="qa-book">Book Now</a>
                             </div>
                         </details>
                     <?php endforeach; ?>
@@ -113,13 +108,38 @@
             });
         });
 
+        // Left poster: follows whichever question is open. Only one question stays open at a time
+        // so the poster always matches what's on screen.
+        var coverBtn = document.getElementById('qaCoverBtn');
+        var coverImg = document.getElementById('qaCoverImg');
+        var coverDefaultSrc = coverImg.getAttribute('src');
+        var coverDefaultAlt = coverImg.getAttribute('alt');
+
+        items.forEach(function (item) {
+            item.addEventListener('toggle', function () {
+                if (item.open) {
+                    items.forEach(function (other) { if (other !== item) other.open = false; });
+                    coverImg.src = item.getAttribute('data-poster');
+                    coverImg.alt = item.getAttribute('data-poster-alt');
+                    coverBtn.setAttribute('data-poster', item.getAttribute('data-poster'));
+                    // On mobile the poster sits above the list rather than beside it; bring it into view.
+                    if (window.innerWidth <= 900) {
+                        coverBtn.closest('.qa-cover').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                } else if (![].some.call(items, function (i) { return i.open; })) {
+                    coverImg.src = coverDefaultSrc;
+                    coverImg.alt = coverDefaultAlt;
+                    coverBtn.setAttribute('data-poster', coverDefaultSrc);
+                }
+            });
+        });
+
         var box = document.getElementById('qaLightbox');
         var boxImg = box.querySelector('img');
-        root.querySelectorAll('.qa-poster-btn').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                boxImg.src = btn.getAttribute('data-poster');
-                box.showModal();
-            });
+        coverBtn.addEventListener('click', function () {
+            boxImg.src = coverBtn.getAttribute('data-poster');
+            boxImg.alt = coverImg.alt;
+            box.showModal();
         });
         box.addEventListener('click', function (e) { if (e.target === box) box.close(); });
     })();
