@@ -75,6 +75,12 @@
                     <img src="images/shop-slide-1.jpg" alt="Hontech Auto Center Inc. storefront and service bay entrance" class="hero-slide">
                     <img src="images/shop-slide-2.jpg" alt="A vehicle raised on a lift for service at Hontech Auto Center" class="hero-slide">
                     <img src="images/shop-slide-3.jpg" alt="Technicians servicing multiple vehicles in the Hontech Auto Center service bay" class="hero-slide">
+                    <button type="button" class="hero-slide-nav hero-slide-prev" aria-label="Previous photo">
+                        <i data-lucide="chevron-left" style="width:20px;height:20px"></i>
+                    </button>
+                    <button type="button" class="hero-slide-nav hero-slide-next" aria-label="Next photo">
+                        <i data-lucide="chevron-right" style="width:20px;height:20px"></i>
+                    </button>
                 </div>
                 <div class="hero-slide-dots" role="tablist" aria-label="Shop photo slides">
                     <button type="button" class="hero-slide-dot active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
@@ -119,12 +125,17 @@
             dots[i].setAttribute('aria-selected', 'true');
         }
         function next() { show(i + 1); }
+        function prev() { show(i - 1); }
         function start() { if (!reduceMotion) timer = setInterval(next, 4500); }
         function stop() { clearInterval(timer); }
 
         dots.forEach(function (dot, idx) {
             dot.addEventListener('click', function () { stop(); show(idx); start(); });
         });
+        var nextBtn = card.querySelector('.hero-slide-next');
+        var prevBtn = card.querySelector('.hero-slide-prev');
+        if (nextBtn) nextBtn.addEventListener('click', function () { stop(); next(); start(); });
+        if (prevBtn) prevBtn.addEventListener('click', function () { stop(); prev(); start(); });
         card.addEventListener('mouseenter', stop);
         card.addEventListener('mouseleave', start);
         card.addEventListener('focusin', stop);
