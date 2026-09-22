@@ -20,6 +20,34 @@
                 <h2 class="section-title">Latest News</h2>
             </div>
 
+            <!-- Anniversary spotlight: TODO: wire to backend as a pinned announcement once the CMS exists.
+                 Confirm with the client: exact free-PMS week dates, and whether "Nicodemus L. De Guzman" /
+                 title is the correct signature to publish. -->
+            <div class="news-spotlight reveal">
+                <span class="news-spotlight-watermark" aria-hidden="true">HONTECH</span>
+                <div class="news-spotlight-text">
+                    <span class="news-spotlight-year">Est. 2020 &middot; Celebrating 2026</span>
+                    <h3>We're Turning <span>6</span>!</h3>
+                    <p>To celebrate six incredible years of driving together, we're giving back to the community that made it possible! Join us for our 6th Anniversary Celebration and take advantage of our exclusive Free PMS Week!</p>
+                    <p class="news-spotlight-highlight">
+                        <i data-lucide="car-front" style="width:18px;height:18px"></i>
+                        <span><strong>First-Come, First-Served:</strong> the first 2 clients to arrive each day for one full week get 100% FREE Labor &amp; Materials for Preventive Maintenance Service (PMS). Mark your calendars, set your alarms, and let us take care of your ride on us!</span>
+                    </p>
+                    <a href="#book" class="btn-primary news-spotlight-cta">
+                        <i data-lucide="calendar-check" style="width:16px;height:16px"></i>
+                        Claim Your Free PMS Slot
+                    </a>
+                    <div class="news-spotlight-sign">
+                        <span>Sincerely,</span>
+                        <strong>Nicodemus L. De Guzman</strong>
+                        <span>President / General Manager</span>
+                    </div>
+                </div>
+                <div class="news-spotlight-media">
+                    <img src="images/service-image.jpg" alt="Hontech Auto Center Inc. technicians servicing a vehicle" loading="lazy">
+                </div>
+            </div>
+
             <div class="news-filters reveal" role="group" aria-label="Filter news by category">
                 <span class="news-filters-label">Filter by category</span>
                 <button type="button" class="chip active" data-cat="all">All</button>
