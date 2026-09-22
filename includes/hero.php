@@ -70,7 +70,18 @@
             </div>
 
             <div class="hero-image-card reveal-right">
-                <img src="images/service-image.jpg" alt="Hontech technicians servicing a vehicle in the Express Lane">
+                <div class="hero-slideshow" id="heroSlideshow">
+                    <img src="images/service-image.jpg" alt="Hontech technicians servicing a vehicle in the Express Lane" class="hero-slide active">
+                    <img src="images/shop-slide-1.jpg" alt="Hontech Auto Center Inc. storefront and service bay entrance" class="hero-slide">
+                    <img src="images/shop-slide-2.jpg" alt="A vehicle raised on a lift for service at Hontech Auto Center" class="hero-slide">
+                    <img src="images/shop-slide-3.jpg" alt="Technicians servicing multiple vehicles in the Hontech Auto Center service bay" class="hero-slide">
+                </div>
+                <div class="hero-slide-dots" role="tablist" aria-label="Shop photo slides">
+                    <button type="button" class="hero-slide-dot active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+                    <button type="button" class="hero-slide-dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+                    <button type="button" class="hero-slide-dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+                    <button type="button" class="hero-slide-dot" role="tab" aria-selected="false" aria-label="Slide 4"></button>
+                </div>
                 <div class="hero-image-overlay">
                     <div class="hero-overlay-icon">
                         <i data-lucide="shield-check" style="width:20px;height:20px;color:white"></i>
@@ -83,6 +94,44 @@
             </div>
         </div>
     </section>
+
+    <script>
+    // Hero photo slideshow: auto-advances, pauses on hover/focus, and skips motion entirely
+    // for prefers-reduced-motion. Dots are clickable to jump directly to a slide.
+    (function () {
+        var card = document.querySelector('.hero-image-card');
+        if (!card) return;
+        var slides = card.querySelectorAll('.hero-slide');
+        var dots = card.querySelectorAll('.hero-slide-dot');
+        if (slides.length < 2) return;
+
+        var i = 0;
+        var timer;
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function show(n) {
+            slides[i].classList.remove('active');
+            dots[i].classList.remove('active');
+            dots[i].setAttribute('aria-selected', 'false');
+            i = (n + slides.length) % slides.length;
+            slides[i].classList.add('active');
+            dots[i].classList.add('active');
+            dots[i].setAttribute('aria-selected', 'true');
+        }
+        function next() { show(i + 1); }
+        function start() { if (!reduceMotion) timer = setInterval(next, 4500); }
+        function stop() { clearInterval(timer); }
+
+        dots.forEach(function (dot, idx) {
+            dot.addEventListener('click', function () { stop(); show(idx); start(); });
+        });
+        card.addEventListener('mouseenter', stop);
+        card.addEventListener('mouseleave', start);
+        card.addEventListener('focusin', stop);
+        card.addEventListener('focusout', start);
+        start();
+    })();
+    </script>
 
     <!-- Marquee Ticker Strip -->
     <div class="marquee-strip">

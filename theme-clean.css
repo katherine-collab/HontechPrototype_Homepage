@@ -83,6 +83,25 @@ body { background: var(--color-white); }
 .btn-secondary { color: var(--color-dark); border: 1.5px solid var(--color-dark); }
 .btn-secondary:hover { color: var(--color-white); background: var(--color-dark); border-color: var(--color-dark); }
 
+/* ── Hero image card: crossfading slideshow ── */
+.hero-slideshow { position: relative; width: 100%; height: 400px; }
+.hero-image-card .hero-slide {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; opacity: 0; transition: opacity 1s ease;
+}
+.hero-image-card .hero-slide.active { opacity: 1; }
+.hero-slide-dots { position: absolute; top: 16px; right: 16px; z-index: 3; display: flex; gap: 4px; }
+.hero-slide-dot { width: 8px; height: 8px; padding: 12px; background: transparent; border: 0; cursor: pointer; position: relative; }
+.hero-slide-dot::before {
+  content: ''; position: absolute; inset: 12px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55); transition: background var(--transition-fast), transform var(--transition-fast);
+}
+.hero-slide-dot:hover::before { background: rgba(255, 255, 255, 0.85); }
+.hero-slide-dot.active::before { background: var(--color-primary); transform: scale(1.3); }
+@media (prefers-reduced-motion: reduce) {
+  .hero-image-card .hero-slide { transition: none; }
+}
+
 /* ── Hero: photo + dark gradient panel, huge bold white heading ("WHO WE ARE" look) ── */
 .hero { padding-top: 88px; }
 .hero-bg img { opacity: 0.5; }
