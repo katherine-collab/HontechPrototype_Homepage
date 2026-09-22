@@ -25,26 +25,45 @@
                  title is the correct signature to publish. -->
             <div class="news-spotlight reveal">
                 <span class="news-spotlight-watermark" aria-hidden="true">HONTECH</span>
-                <div class="news-spotlight-text">
-                    <span class="news-spotlight-year">Est. 2020 &middot; Celebrating 2026</span>
-                    <h3>We're Turning <span>6</span>!</h3>
-                    <p>To celebrate six incredible years of driving together, we're giving back to the community that made it possible! Join us for our 6th Anniversary Celebration and take advantage of our exclusive Free PMS Week!</p>
-                    <p class="news-spotlight-highlight">
-                        <i data-lucide="car-front" style="width:18px;height:18px"></i>
-                        <span><strong>First-Come, First-Served:</strong> the first 2 clients to arrive each day for one full week get 100% FREE Labor &amp; Materials for Preventive Maintenance Service (PMS). Mark your calendars, set your alarms, and let us take care of your ride on us!</span>
-                    </p>
-                    <a href="#book" class="btn-primary news-spotlight-cta">
-                        <i data-lucide="calendar-check" style="width:16px;height:16px"></i>
-                        Claim Your Free PMS Slot
-                    </a>
-                    <div class="news-spotlight-sign">
-                        <span>Sincerely,</span>
-                        <strong>Nicodemus L. De Guzman</strong>
-                        <span>President / General Manager</span>
+                <div class="news-spotlight-top">
+                    <div class="news-spotlight-text">
+                        <span class="news-spotlight-year">Est. 2020 &middot; Celebrating 2026</span>
+                        <h3>We're Turning <span>6</span>!</h3>
+                        <p>To celebrate six incredible years of driving together, we're giving back to the community that made it possible! Join us for our 6th Anniversary Celebration and take advantage of our exclusive Free PMS Week!</p>
+                        <p class="news-spotlight-highlight">
+                            <i data-lucide="car-front" style="width:18px;height:18px"></i>
+                            <span><strong>First-Come, First-Served:</strong> the first 2 clients to arrive each day for one full week get 100% FREE Labor &amp; Materials for Preventive Maintenance Service (PMS). Mark your calendars, set your alarms, and let us take care of your ride on us!</span>
+                        </p>
+                    </div>
+                    <div class="news-spotlight-media">
+                        <img src="images/service-image.jpg" alt="Hontech Auto Center Inc. technicians servicing a vehicle" loading="lazy">
                     </div>
                 </div>
-                <div class="news-spotlight-media">
-                    <img src="images/service-image.jpg" alt="Hontech Auto Center Inc. technicians servicing a vehicle" loading="lazy">
+
+                <!-- Sponsor invitation letter, as given by the client. Left out the "Supplier / Partner
+                     Company Name" + "Address" inside-address lines since those are mail-merge fields for
+                     an individually addressed letter, not content -- they'd read as broken placeholders
+                     on a public page. Everything else is verbatim. -->
+                <div class="news-spotlight-sponsor">
+                    <span class="news-spotlight-sponsor-eyebrow">Attention: Sales &amp; Partnership Department</span>
+                    <p class="news-spotlight-sponsor-subject">Subject: Request for Support &amp; Sponsorship — 6th Anniversary Celebration of Hontech Auto Center, Inc.</p>
+                    <p>Dear Supplier,</p>
+                    <p>Warm greetings from Hontech Auto Center, Inc.!</p>
+                    <p>This coming October 7, 2026, Hontech Auto Center, Inc. will proudly mark its 6th anniversary in the industry. Over the past six years, our commitment to providing quality service and reliable automotive care has been the cornerstone of our success&mdash;a milestone made possible in large part by strong, dependable partners like you.</p>
+                    <p>To celebrate this milestone and express gratitude to our loyal clients, we are hosting a week-long anniversary promo. Our flagship campaign will offer 100% Free Labor and Materials for Preventive Maintenance Service (PMS) to the first two (2) clients who arrive early each day throughout the event week.</p>
+                    <p>In line with this, we would like to invite you to be an official sponsor of our 6th Anniversary Celebration. We are respectfully requesting support in the form of:</p>
+                    <ul>
+                        <li><strong>Sponsorship of PMS Supplies &amp; Consumables:</strong> engine oils, filters, fluids, or related maintenance products.</li>
+                        <li><strong>Co-branded Event Merchandise or Giveaways:</strong> promotional items, tools, or merchandise for our visiting clients.</li>
+                    </ul>
+                    <p>In appreciation of your support, we will feature your company as a key event partner across our digital marketing channels, social media campaign posts, and printed event signage throughout the celebration week.</p>
+                    <p>Thank you for your continued partnership and support over the years. We look forward to celebrating this success together. Please feel free to reach out at <a href="tel:+639228097492">0922 809 7492</a> or visit us to discuss potential co-sponsorship details.</p>
+                </div>
+
+                <div class="news-spotlight-sign">
+                    <span>Sincerely,</span>
+                    <strong>Nicodemus L. De Guzman</strong>
+                    <span>President / General Manager</span>
                 </div>
             </div>
 
