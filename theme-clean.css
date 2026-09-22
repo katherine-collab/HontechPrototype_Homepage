@@ -300,6 +300,33 @@ body { background: var(--color-white); }
   .qa-q { font-size: 16px; }
 }
 
+/* ── News & Book Now: dark red section background (client-requested #b31900) ──
+   Scoped to these two sections' IDs (not .section-alt) so Vision & Mission and
+   Team, which share that same class, are unaffected. Text/label/chip colors
+   below are flipped to light since they were tuned for a light section bg. */
+#news, #book { background-color: #b31900; }
+#news .section-label, #book .section-label { color: #ffd6c9; }
+#news .section-label::before, #book .section-label::before { background: #ffd6c9; }
+#news .section-title, #book .section-title { color: var(--color-white); }
+#news .section-subtitle, #book .section-subtitle { color: rgba(255, 255, 255, 0.85); }
+#news .news-filters-label { color: rgba(255, 255, 255, 0.85); }
+/* white chips already contrast well against the dark red bg; only sharpen the border */
+#news .chip { border-color: rgba(255, 255, 255, 0.6); }
+#news .chip.active { background: var(--color-dark); border-color: var(--color-dark); }
+
+/* ── Contact map: "Get Directions" overlay pill ── */
+.contact-map { position: relative; }
+.contact-map-directions {
+  position: absolute; right: 16px; bottom: 16px; z-index: 2;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 20px; min-height: 44px;
+  background: var(--color-primary); color: var(--color-white);
+  font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+  border-radius: var(--radius-sm); box-shadow: var(--shadow-lg);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+.contact-map-directions:hover { background: var(--color-primary-dark); transform: translateY(-2px); }
+
 /* ── Accessibility ── */
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
   outline: 3px solid var(--color-primary);

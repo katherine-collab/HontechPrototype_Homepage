@@ -76,11 +76,16 @@
             </div>
 
             <div class="contact-map reveal" style="margin-top: 48px;">
+                <!-- Real pinned location (resolved from https://maps.app.goo.gl/XXuCnayVV9H9EQRs6): Hontech Auto Center Inc, 14.6500919, 121.1134286 -->
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.5!2d121.1!3d14.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDM5JzAwLjAiTiAxMjHCsDA2JzAwLjAiRQ!5e0!3m2!1sen!2sph!4v1"
+                    src="https://www.google.com/maps?q=14.6500919,121.1134286&z=17&output=embed"
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade" title="Hontech Auto Center Location Map">
+                    referrerpolicy="no-referrer-when-downgrade" title="Hontech Auto Center Inc. location map">
                 </iframe>
+                <a href="https://maps.app.goo.gl/XXuCnayVV9H9EQRs6" target="_blank" rel="noopener" class="contact-map-directions">
+                    <i data-lucide="navigation" style="width:16px;height:16px"></i>
+                    Get Directions
+                </a>
             </div>
         </div>
     </section>
