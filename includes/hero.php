@@ -3,7 +3,7 @@
          ═══════════════════════════════════════ -->
     <section class="hero" id="hero">
         <div class="hero-bg" data-parallax="0.3">
-            <img src="images/hero-bg.png" alt="Hontech Auto Center Workshop" loading="eager">
+            <img src="images/hero-bg.jpg" alt="Hontech Auto Center Inc. storefront and entrance" loading="eager">
         </div>
         <div class="hero-dots"></div>
 
@@ -70,7 +70,7 @@
             </div>
 
             <div class="hero-image-card reveal-right">
-                <img src="images/service-image.png" alt="Professional Auto Service">
+                <img src="images/service-image.jpg" alt="Hontech technicians servicing a vehicle in the Express Lane">
                 <div class="hero-image-overlay">
                     <div class="hero-overlay-icon">
                         <i data-lucide="shield-check" style="width:20px;height:20px;color:white"></i>
