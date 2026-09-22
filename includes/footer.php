@@ -16,7 +16,7 @@
                         <a href="#about">About Corporate</a>
                         <a href="#why-hontech">The 6 C's Pillars</a>
                         <a href="#services">PMS Packages</a>
-                        <a href="#estimator">Cost Calculator</a>
+                        <a href="#book">Book Now</a>
                         <a href="admin.php">Management Portal</a>
                     </div>
                 </div>

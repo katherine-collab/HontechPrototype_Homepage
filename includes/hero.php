@@ -43,9 +43,9 @@
                 </p>
 
                 <div class="hero-actions">
-                    <a href="#estimator" class="btn-primary">
-                        <i data-lucide="calculator" style="width:16px;height:16px"></i>
-                        Calculate Estimate
+                    <a href="#book" class="btn-primary">
+                        <i data-lucide="calendar-check" style="width:16px;height:16px"></i>
+                        Book Now
                     </a>
                     <a href="#about" class="btn-secondary">
                         <i data-lucide="play-circle" style="width:16px;height:16px"></i>
